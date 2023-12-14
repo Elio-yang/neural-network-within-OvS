@@ -1,7 +1,8 @@
 /---------------------------------------------------------------------------------------------\
 | Understanding Neural Network Based Packet Classification Algorithms to Scale Open vSwitch   |
 |                                                                                             |
-| Author: Yang Yang, Yuhao Peng, Jasmine Zhang                                                |
+| Author: Yang Yang*, Yuhao Peng, Jasmine Zhang                                               |
+| Contact: xqg5sq AT virginia.edu                                                             |                        
 | Advisor: Joon Kim                                                                           |                        
 | Date: 12/13/2023                                                                            |
 |                                                                                             |                        
