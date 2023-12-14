@@ -57,7 +57,7 @@
     ovs-ofctl dump-flows br1
     ./ovs-load.sh --emc --ruleset "acl3-100k" --ovs-ccache --n-handler 1 --n-revalidator 1 --n-rxq 1
 
-13. repear step 10, 11 and 12 to run different rulesets with different traces
+13. repeat step 10, 11 and 12 to run different rulesets with different traces
 
 14. to run baseline ovs, simply start ovs as step 6, then 
     (a.) create a new OvS bridge
