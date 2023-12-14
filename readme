@@ -54,16 +54,24 @@
 10. test real-world trace, back to terminal veth1 and replay 
     ip netns exec blue tcpreplay -i veth1 -L 10000000 xxxx.pcap
 
-11. collect statistics from replay result
+11. collect statistics from replay result, and could check flow rules
+    ovs-ofctl dump-flows br1
 
 12. clear OvS flows and start new test, still on terminal ovs
     ovs-ofctl --bundle del-flows br1
     ovs-ofctl dump-flows br1
     ./ovs-load.sh --emc --ruleset "acl3-100k" --ovs-ccache --n-handler 1 --n-revalidator 1 --n-rxq 1
 
-13. repeat step 10, 11 and 12 to run different rulesets with different traces
+13. repeat step 12, 10 and 11 to run different rulesets with different traces
+    (a.) On terminal ovs
+        ovs-ofctl --bundle del-flows br1
+        ovs-ofctl dump-flows br1
+        ./ovs-load.sh --emc --ruleset "acl3-500k" --ovs-ccache --n-handler 1 --n-revalidator 1 --n-rxq 1
+    (b.) On terminal veth1
+        ip netns exec blue tcpreplay -i veth1 -L 10000000 xxxx.pcap
 
-14. to run baseline ovs, simply start ovs as step 6, then 
+
+14. to run baseline ovs, simply start ovs as step 6.a, then 
     (a.) create a new OvS bridge
         ovs-vsctl del-port br1 veth0
         ovs-vsctl add-br br0
