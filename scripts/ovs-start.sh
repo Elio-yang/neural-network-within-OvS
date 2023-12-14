@@ -34,6 +34,7 @@ llc=$(get_flag llc)
 
 [[ -z $cores ]] && echo "--cores argument is missing!"
 
+# 1st
 echo "*** ovs-start.sh script start with arguments $@"
 
 # Stop OVS, delete bridge
@@ -46,11 +47,16 @@ $scripts_dir/dpdk-init.sh
 # Starts ovsdb-server server (w/o vswitchd)
 echo "Starting ovsdb server..."
 rm -f $ovs_log_file
+
+echo "???"
+echo $ovs_ctl
+
 $ovs_ctl --no-ovs-vswitchd  \
          --system-id=random \
          --delete-bridges   \
          start              \
-&> /dev/null
+         
+echo "what"
 
 # Configure DPDK 
 echo "Configuring OVS with DPDK..."
@@ -69,12 +75,14 @@ fi
 
 # Start vswitchd
 echo "Starting OVS vswitchd..."
-$ovs_ctl --no-ovsdb-server             \
+sudo $ovs_ctl --no-ovsdb-server             \
          --db-sock="$ovs_db_sock_file" \
          start                         \
-&> /dev/null
+
 
 # Validate OVS has loaded DPDK
+echo 'running commands'
+echo $(sudo ovs-vsctl get Open_vSwitch . dpdk_initialized)
 result=$(sudo ovs-vsctl get Open_vSwitch . dpdk_initialized)
 if [[ $result != true ]]; then
 	echo "Error: dpdk is not enabled in OVS. Exiting OVS."

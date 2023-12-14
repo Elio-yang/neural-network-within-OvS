@@ -1,0 +1,95 @@
+2023-12-13T21:03:33.907Z|00001|vlog|INFO|opened log file /usr/local/var/log/openvswitch/ovs-vswitchd.log
+2023-12-13T21:03:33.915Z|00002|ovs_numa|INFO|Discovered 8 CPU cores on NUMA node 0
+2023-12-13T21:03:33.915Z|00003|ovs_numa|INFO|Discovered 1 NUMA nodes and 8 CPU cores
+2023-12-13T21:03:33.915Z|00004|reconnect|INFO|unix:/usr/local/var/run/openvswitch/db.sock: connecting...
+2023-12-13T21:03:33.915Z|00005|reconnect|INFO|unix:/usr/local/var/run/openvswitch/db.sock: connected
+2023-12-13T21:03:33.918Z|00006|dpdk|INFO|Using DPDK 19.11.0
+2023-12-13T21:03:33.918Z|00007|dpdk|INFO|DPDK Enabled - initializing...
+2023-12-13T21:03:33.918Z|00008|dpdk|INFO|No vhost-sock-dir provided - defaulting to /usr/local/var/run/openvswitch
+2023-12-13T21:03:33.918Z|00009|dpdk|INFO|IOMMU support for vhost-user-client disabled.
+2023-12-13T21:03:33.918Z|00010|dpdk|INFO|POSTCOPY support for vhost-user-client disabled.
+2023-12-13T21:03:33.918Z|00011|dpdk|INFO|Per port memory for DPDK devices disabled.
+2023-12-13T21:03:33.918Z|00012|dpdk|INFO|EAL ARGS: ovs-vswitchd --socket-mem 1024 --socket-limit 1024 -l 0.
+2023-12-13T21:03:33.922Z|00013|dpdk|INFO|EAL: Detected 8 lcore(s)
+2023-12-13T21:03:33.922Z|00014|dpdk|INFO|EAL: Detected 1 NUMA nodes
+2023-12-13T21:03:33.925Z|00015|dpdk|INFO|EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+2023-12-13T21:03:33.932Z|00016|dpdk|INFO|EAL: Selected IOVA mode 'PA'
+2023-12-13T21:03:33.934Z|00017|dpdk|WARN|EAL: No available hugepages reported in hugepages-1048576kB
+2023-12-13T21:03:33.934Z|00018|dpdk|INFO|EAL: Probing VFIO support...
+2023-12-13T21:03:33.934Z|00019|dpdk|INFO|EAL: VFIO support initialized
+2023-12-13T21:03:42.315Z|00020|dpdk|INFO|DPDK Enabled - initialized
+2023-12-13T21:03:42.319Z|00021|bridge|INFO|ovs-vswitchd (Open vSwitch) 2.13.1
+2023-12-13T21:03:42.319Z|00022|timeval|WARN|Unreasonably long 8402ms poll interval (4ms user, 8327ms system)
+2023-12-13T21:03:42.319Z|00023|timeval|WARN|faults: 16786454 minor, 0 major
+2023-12-13T21:03:42.319Z|00024|timeval|WARN|disk: 0 reads, 8 writes
+2023-12-13T21:03:42.319Z|00025|timeval|WARN|context switches: 9 voluntary, 64 involuntary
+2023-12-13T21:03:42.319Z|00026|coverage|INFO|Event coverage, avg rate over last: 5 seconds, last minute, last hour,  hash=4cb64772:
+2023-12-13T21:03:42.319Z|00027|coverage|INFO|bridge_reconfigure         0.0/sec     0.000/sec        0.0000/sec   total: 1
+2023-12-13T21:03:42.319Z|00028|coverage|INFO|cmap_expand                0.0/sec     0.000/sec        0.0000/sec   total: 11
+2023-12-13T21:03:42.319Z|00029|coverage|INFO|miniflow_malloc            0.0/sec     0.000/sec        0.0000/sec   total: 15
+2023-12-13T21:03:42.319Z|00030|coverage|INFO|hmap_pathological          0.0/sec     0.000/sec        0.0000/sec   total: 4
+2023-12-13T21:03:42.319Z|00031|coverage|INFO|hmap_expand                0.0/sec     0.000/sec        0.0000/sec   total: 438
+2023-12-13T21:03:42.319Z|00032|coverage|INFO|txn_unchanged              0.0/sec     0.000/sec        0.0000/sec   total: 3
+2023-12-13T21:03:42.319Z|00033|coverage|INFO|poll_create_node           0.0/sec     0.000/sec        0.0000/sec   total: 53
+2023-12-13T21:03:42.319Z|00034|coverage|INFO|poll_zero_timeout          0.0/sec     0.000/sec        0.0000/sec   total: 1
+2023-12-13T21:03:42.319Z|00035|coverage|INFO|seq_change                 0.0/sec     0.000/sec        0.0000/sec   total: 68
+2023-12-13T21:03:42.319Z|00036|coverage|INFO|pstream_open               0.0/sec     0.000/sec        0.0000/sec   total: 1
+2023-12-13T21:03:42.319Z|00037|coverage|INFO|stream_open                0.0/sec     0.000/sec        0.0000/sec   total: 1
+2023-12-13T21:03:42.319Z|00038|coverage|INFO|util_xalloc                0.0/sec     0.000/sec        0.0000/sec   total: 7915
+2023-12-13T21:03:42.319Z|00039|coverage|INFO|netlink_received           0.0/sec     0.000/sec        0.0000/sec   total: 50
+2023-12-13T21:03:42.319Z|00040|coverage|INFO|netlink_recv_jumbo         0.0/sec     0.000/sec        0.0000/sec   total: 7
+2023-12-13T21:03:42.319Z|00041|coverage|INFO|netlink_sent               0.0/sec     0.000/sec        0.0000/sec   total: 48
+2023-12-13T21:03:42.319Z|00042|coverage|INFO|123 events never hit
+2023-12-13T21:05:22.021Z|00043|memory|INFO|64648 kB peak resident set size after 108.1 seconds
+2023-12-13T21:05:22.022Z|00044|ofproto_dpif|INFO|system@ovs-system: Datapath supports recirculation
+2023-12-13T21:05:22.022Z|00045|ofproto_dpif|INFO|system@ovs-system: VLAN header stack length probed as 2
+2023-12-13T21:05:22.022Z|00046|ofproto_dpif|INFO|system@ovs-system: MPLS label stack length probed as 3
+2023-12-13T21:05:22.022Z|00047|ofproto_dpif|INFO|system@ovs-system: Datapath supports truncate action
+2023-12-13T21:05:22.022Z|00048|ofproto_dpif|INFO|system@ovs-system: Datapath supports unique flow ids
+2023-12-13T21:05:22.022Z|00049|ofproto_dpif|INFO|system@ovs-system: Datapath supports clone action
+2023-12-13T21:05:22.022Z|00050|ofproto_dpif|INFO|system@ovs-system: Max sample nesting level probed as 10
+2023-12-13T21:05:22.022Z|00051|ofproto_dpif|INFO|system@ovs-system: Datapath supports eventmask in conntrack action
+2023-12-13T21:05:22.022Z|00052|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_clear action
+2023-12-13T21:05:22.022Z|00053|ofproto_dpif|INFO|system@ovs-system: Max dp_hash algorithm probed to be 0
+2023-12-13T21:05:22.022Z|00054|ofproto_dpif|INFO|system@ovs-system: Datapath supports check_pkt_len action
+2023-12-13T21:05:22.022Z|00055|ofproto_dpif|INFO|system@ovs-system: Datapath supports timeout policy in conntrack action
+2023-12-13T21:05:22.022Z|00056|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_state
+2023-12-13T21:05:22.022Z|00057|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_zone
+2023-12-13T21:05:22.022Z|00058|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_mark
+2023-12-13T21:05:22.023Z|00059|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_label
+2023-12-13T21:05:22.023Z|00060|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_state_nat
+2023-12-13T21:05:22.023Z|00061|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_orig_tuple
+2023-12-13T21:05:22.023Z|00062|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_orig_tuple6
+2023-12-13T21:05:22.023Z|00063|ofproto_dpif|INFO|system@ovs-system: Datapath does not support IPv6 ND Extensions
+2023-12-13T21:05:22.042Z|00064|dpif|WARN|system@ovs-system: failed to add br1 as port: File exists
+2023-12-13T21:05:22.042Z|00065|bridge|WARN|could not add network device br1 to ofproto (File exists)
+2023-12-13T21:05:22.042Z|00066|bridge|INFO|bridge br1: using datapath ID 0000861c2ad4c34d
+2023-12-13T21:05:22.042Z|00067|connmgr|INFO|br1: added service controller "punix:/usr/local/var/run/openvswitch/br1.mgmt"
+2023-12-13T21:05:22.045Z|00068|dpif|WARN|system@ovs-system: failed to add br1 as port: File exists
+2023-12-13T21:05:22.045Z|00069|bridge|WARN|could not add network device br1 to ofproto (File exists)
+2023-12-13T21:06:08.618Z|00070|ofproto_dpif|INFO|system@ovs-system: Datapath supports recirculation
+2023-12-13T21:06:08.618Z|00071|ofproto_dpif|INFO|system@ovs-system: VLAN header stack length probed as 2
+2023-12-13T21:06:08.618Z|00072|ofproto_dpif|INFO|system@ovs-system: MPLS label stack length probed as 3
+2023-12-13T21:06:08.618Z|00073|ofproto_dpif|INFO|system@ovs-system: Datapath supports truncate action
+2023-12-13T21:06:08.619Z|00074|ofproto_dpif|INFO|system@ovs-system: Datapath supports unique flow ids
+2023-12-13T21:06:08.619Z|00075|ofproto_dpif|INFO|system@ovs-system: Datapath supports clone action
+2023-12-13T21:06:08.619Z|00076|ofproto_dpif|INFO|system@ovs-system: Max sample nesting level probed as 10
+2023-12-13T21:06:08.619Z|00077|ofproto_dpif|INFO|system@ovs-system: Datapath supports eventmask in conntrack action
+2023-12-13T21:06:08.619Z|00078|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_clear action
+2023-12-13T21:06:08.619Z|00079|ofproto_dpif|INFO|system@ovs-system: Max dp_hash algorithm probed to be 0
+2023-12-13T21:06:08.619Z|00080|ofproto_dpif|INFO|system@ovs-system: Datapath supports check_pkt_len action
+2023-12-13T21:06:08.619Z|00081|ofproto_dpif|INFO|system@ovs-system: Datapath supports timeout policy in conntrack action
+2023-12-13T21:06:08.619Z|00082|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_state
+2023-12-13T21:06:08.619Z|00083|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_zone
+2023-12-13T21:06:08.619Z|00084|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_mark
+2023-12-13T21:06:08.619Z|00085|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_label
+2023-12-13T21:06:08.619Z|00086|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_state_nat
+2023-12-13T21:06:08.619Z|00087|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_orig_tuple
+2023-12-13T21:06:08.619Z|00088|ofproto_dpif|INFO|system@ovs-system: Datapath supports ct_orig_tuple6
+2023-12-13T21:06:08.619Z|00089|ofproto_dpif|INFO|system@ovs-system: Datapath does not support IPv6 ND Extensions
+2023-12-13T21:06:08.620Z|00090|dpif|WARN|system@ovs-system: failed to add br1 as port: File exists
+2023-12-13T21:06:08.620Z|00091|bridge|WARN|could not add network device br1 to ofproto (File exists)
+2023-12-13T21:06:08.620Z|00092|bridge|INFO|bridge br1: using datapath ID 0000e658ff6d0b47
+2023-12-13T21:06:08.620Z|00093|connmgr|INFO|br1: added service controller "punix:/usr/local/var/run/openvswitch/br1.mgmt"
+2023-12-13T21:06:08.623Z|00094|dpif|WARN|system@ovs-system: failed to add br1 as port: File exists
+2023-12-13T21:06:08.623Z|00095|bridge|WARN|could not add network device br1 to ofproto (File exists)

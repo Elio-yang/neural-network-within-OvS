@@ -122,6 +122,7 @@ echo "*** smc_enabled=$smc_enabled" | tee -a $ovs_log_file
 echo "*** ccache_enabled=$ccache_enabled" | tee -a $ovs_log_file
 echo "*** cflows_enabled=$cflows_enabled" | tee -a $ovs_log_file
 
+
 # Add ovs bridge and bind to interface (defined in .config)
 $ovs_vsctl add-br $ovs_br                   \
  -- set bridge $ovs_br datapath_type=netdev
@@ -132,14 +133,20 @@ $ovs_vsctl \
     set Open_vSwitch . other_config:pmd-cpu-mask="$pmd_mask"
 
 # Add run-to-completion ports
+# $ovs_vsctl \
+#  -- add-port $ovs_br "port-1"              \
+#  -- set Interface "port-1" type=dpdk       \
+#     options:dpdk-devargs=$pci_rx           \
+#     options:n_rxq=$n_rxq
 $ovs_vsctl \
- -- add-port $ovs_br "port-1"              \
- -- set Interface "port-1" type=dpdk       \
-    options:dpdk-devargs=$pci_rx           \
-    options:n_rxq=$n_rxq
-$ovs_vsctl add-port $ovs_br "port-2"       \
- -- set Interface "port-2" type=dpdk       \
-    options:dpdk-devargs=$pci_tx           \
+ -- add-port $ovs_br "veth0"              \
+#  -- set Interface "veth0" type=dpdk       \
+#     options:dpdk-devargs=$pci_rx           \
+#     options:n_rxq=$n_rxq
+
+# $ovs_vsctl add-port $ovs_br "port-2"       \
+#  -- set Interface "port-2" type=dpdk       \
+#     options:dpdk-devargs=$pci_tx           \
 
 
 # Delete all current OpenFlow rules in switch

@@ -1,0 +1,25 @@
+
+./ovs-load.sh --emc --ruleset "fw4-100k fw4-500k" --ovs-cflows --n-handler 1 --n-revalidator 1 --n-rxq 1
+
+
+
+
+
+2023-12-13T19:16:36.747Z|00097|dpif_netdev_nmu|INFO|NuevoMatchUp is enabled with the following:max-collision: 40, error-threshold: 128, min-coverage: 25, cool-down: 0, train-threshold: 90, garbage-collection: 0, allow-cmpflows: 1, instant-remainder: 1, sessions: 6, samples: 4000, batching: 0 
+2023-12-13T19:16:36.747Z|00098|dpif_netdev|INFO|Log interval: 1000 ms
+2023-12-13T19:16:36.753Z|00099|bridge|INFO|bridge br1: added interface br1 on port 65534
+2023-12-13T19:16:36.753Z|00100|bridge|INFO|bridge br1: using datapath ID 00000ee4c2bb7142
+2023-12-13T19:16:36.753Z|00101|connmgr|INFO|br1: added service controller "punix:/usr/local/var/run/openvswitch/br1.mgmt"
+2023-12-13T19:16:36.756Z|00102|dpif_netdev_nmu|INFO|NuevoMatchUp is enabled with the following:max-collision: 40, error-threshold: 128, min-coverage: 25, cool-down: 0, train-threshold: 90, garbage-collection: 0, allow-cmpflows: 1, instant-remainder: 1, sessions: 6, samples: 4000, batching: 0 
+2023-12-13T19:16:36.756Z|00103|dpif_netdev|INFO|Log interval: 1000 ms
+2023-12-13T19:16:36.776Z|00104|dpif_netdev_nmu|INFO|NuevoMatchUp is enabled with the following:max-collision: 40, error-threshold: 128, min-coverage: 25, cool-down: 0, train-threshold: 90, garbage-collection: 0, allow-cmpflows: 1, instant-remainder: 1, sessions: 6, samples: 4000, batching: 0 
+2023-12-13T19:16:36.776Z|00105|dpif_netdev|INFO|Log interval: 1000 ms
+
+
+sudo ip netns exec blue tcpreplay -i veth1 -L 10000000 202004080230.pcap
+
+root@jasony-TM1701:/home/jasony/Desktop/ovs-nuevomatchup/scripts# ovs-ofctl --bundle del-flows br1
+root@jasony-TM1701:/home/jasony/Desktop/ovs-nuevomatchup/scripts# ovs-ofctl dump-flows br1
+root@jasony-TM1701:/home/jasony/Desktop/ovs-nuevomatchup/scripts# ./ovs-load.sh --emc --ruleset "acl3-500k" --ovs-ccache --n-handler 1 --n-revalidator 1 --n-rxq 1
+
+ovs-ofctl --bundle add-flows br0  ../data/generated/acl3-1k/ovs.txt

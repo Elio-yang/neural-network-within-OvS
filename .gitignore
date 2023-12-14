@@ -1,7 +1,10 @@
 dpdk/*
+dpdk
+ovs
 ovs/*
 data/*
 nuevomatchup/*
+nuevomatchup
 simple-packet-gen/*
 scripts/.*
 scripts/__pycache__
@@ -9,3 +12,9 @@ data
 simd.h
 .gdb_history
 **/*.swp
+traces
+traces/*
+rules
+rules/*
+simple-packet-gen
+
