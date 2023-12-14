@@ -27,7 +27,10 @@
     apt-get install -y dpdk-igb-uio-dkms
 
 6. try to start OvS
-    ./ovs-start.sh --cores 2 
+    (a.) launch OvS, this should produce no error in the end, entering the log window
+        ./ovs-start.sh --cores 2 
+    (b.) stop ovs 
+        ./ovs-stop.sh
 
 7. try to isolate network environment for OvS
     (a.) On terminal veth1
