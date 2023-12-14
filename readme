@@ -2,6 +2,10 @@
 | Understanding Neural Network Based Packet Classification Algorithms to Scale Open vSwitch   |
 |                                                                                             |
 | Author: Yang Yang, Yuhao Peng, Jasmine Zhang                                                |
+| Date: 12/13/2023                                                                            |
+|                                                                                             |                        
+| Credits: https://github.com/acsl-technion/ovs-nuevomatchup                                  |       
+| Paper: https://www.usenix.org/conference/nsdi22/presentation/rashelbach                     | 
 |                                                                                             |                        
 \---------------------------------------------------------------------------------------------/
 
