@@ -94,4 +94,4 @@
 18. for original readme, check readme.old
     if you have DPDK connections, follow clone the original repository and follow the original readme steps
     in this readme, we removed many files from original repository, and added some scripts to make it easier to run experiments
-    but the dpdk.patch are not provided from original repository, so you need to apply it manually
+    the dpdk.patch are not provided from original repository, so you need to apply it manually
