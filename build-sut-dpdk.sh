@@ -14,6 +14,7 @@ if [[ ! -e $dpdk_dir ]]; then
     echo "Cloning DPDK 19.11 into $dpdk_dir..."
     git clone https://github.com/DPDK/dpdk.git $dpdk_dir
     git -C $dpdk_dir checkout tags/v19.11
+    git -C $ovs_dir apply $my_dir/dpdk.patch
 fi
 
 

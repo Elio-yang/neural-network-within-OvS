@@ -1,0 +1,9 @@
+place all rulesets in this folder
+
+like this:
+
+acl3-1k/ovs.txt
+acl3-100k/ovs.txt
+acl3-500k/ovs.txt
+
+all rulesets could be get from: https://myuva-my.sharepoint.com/:u:/g/personal/xqg5sq_virginia_edu/ETC3DJx2PihBv0UYVx6cwcIBZyR9uF_S57Ws-9nv6olTpw?e=gTpJ1z

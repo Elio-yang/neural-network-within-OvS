@@ -9,7 +9,7 @@ nmu_dir=$my_dir/nuevomatchup
 
 
 if [[ ! -e $nmu_dir ]]; then
-    zipname="libnuevomatchup-x86-64-linux-${libnmu_version}.zip"
+    zipname="v-x86-64-linux-${libnmu_version}.zip"
     echo "Downloading libnuevomatchup..."
     wget "https://alonrashelbach.files.wordpress.com/$date/$zipname"
     unzip $zipname -d $nmu_dir

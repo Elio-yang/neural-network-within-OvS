@@ -1,10 +1,6 @@
 
 ./ovs-load.sh --emc --ruleset "fw4-100k fw4-500k" --ovs-cflows --n-handler 1 --n-revalidator 1 --n-rxq 1
-
-
-
-
-
+./ovs-start.sh --cores 2 
 2023-12-13T19:16:36.747Z|00097|dpif_netdev_nmu|INFO|NuevoMatchUp is enabled with the following:max-collision: 40, error-threshold: 128, min-coverage: 25, cool-down: 0, train-threshold: 90, garbage-collection: 0, allow-cmpflows: 1, instant-remainder: 1, sessions: 6, samples: 4000, batching: 0 
 2023-12-13T19:16:36.747Z|00098|dpif_netdev|INFO|Log interval: 1000 ms
 2023-12-13T19:16:36.753Z|00099|bridge|INFO|bridge br1: added interface br1 on port 65534

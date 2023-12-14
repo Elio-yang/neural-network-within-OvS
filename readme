@@ -1,0 +1,67 @@
+0. run all steps on Ubuntu 20.04 with AVX-512, FMA and POPCNT enabled Intel CPU.
+
+1. make sure you run all commands using sudo or under root.
+
+2. install SUT dependencies, this script will install OvS, libnuevomatchup and apply patch (ovs.patch) to OvS
+    ./build-sut.sh
+
+3. install dpdk, this script will install dpdk and patch (dpdk.patch) to it
+    ./build-sut-dpdk.sh
+
+4. make sure both ovs and dpdk are built successfully, cause both ovs and dpdk compilation will produce 
+    massive information, and might cover the error messages.
+
+5. install uio and igb_uio kernel modules
+    apt-get install -y dpdk-igb-uio-dkms
+
+6. try to start OvS
+    ./ovs-start.sh --cores 2 
+
+7. try to isolate network environment for OvS
+    (a.) On terminal veth1
+        ip netns add blue
+        ip link add veth0 type veth peer name veth1
+        ip link set veth1 netns blue
+        ip netns exec blue ip addr add 192.168.10.10/24 dev veth1
+        ip netns exec blue ip link set dev veth1 up
+    (b.) On terminal veth0 (specified in scripts/ovs-load.sh)
+        ip addr add 192.168.10.20/24 dev veth0
+        ip link set dev veth0 up
+        tcpdump -i veth0 -nnnne
+
+8. test trace replay, back to terminal veth1 and replay from veth1 in blue, check whether veth0 could receive packets
+    ip netns exec blue tcpreplay -i veth1 xxxx.pcap
+
+9. load OvS with neural network on anther terminal ovs
+    ./ovs-load.sh --emc --ruleset "acl3-1k" --ovs-ccache --n-handler 1 --n-revalidator 1 --n-rxq 1
+
+10. test real-world trace, back to terminal veth1 and replay 
+    ip netns exec blue tcpreplay -i veth1 -L 10000000 xxxx.pcap
+
+11. collect statistics from replay result
+
+12. clear OvS flows and start new test, still on terminal ovs
+    ovs-ofctl --bundle del-flows br1
+    ovs-ofctl dump-flows br1
+    ./ovs-load.sh --emc --ruleset "acl3-100k" --ovs-ccache --n-handler 1 --n-revalidator 1 --n-rxq 1
+
+13. repear step 10, 11 and 12 to run different rulesets with different traces
+
+14. to run baseline ovs, simply start ovs as step 6, then 
+    (a.) create a new OvS bridge
+        ovs-vsctl del-port br1 veth0
+        ovs-vsctl add-br br0
+        ovs-vsctl add-port br0 veth0
+        ovs-ofctl --bundle del-flows br0
+        ovs-ofctl dump-flows br0
+    (b.) load rulesets
+        ovs-ofctl --bundle add-flows br0  ../data/generated/acl3-1k/ovs.txt
+    (b.) repeat step 10, 11 and 14.b
+
+15. rulesets should be places in data/generated, check that folder for detail
+
+16. traces information is in traces/traces-readme
+
+17. related logs during experiments are in logs/
+
+    
