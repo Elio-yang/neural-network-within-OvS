@@ -74,9 +74,15 @@
     (b.) repeat step 10, 11 and 14.b
 
 15. rulesets should be places in data/generated, check that folder for detail
+    rulesets could be download from link in rulesets.readme
 
-16. traces information is in traces/traces-readme
+16. traces information is in traces/traces.readme
+    download traces from link in traces.readme
 
 17. related logs during experiments are in logs/
+    sample logs if OvS are successfully loaded with NN module
 
 18. for original readme, check readme.old
+    if you have DPDK connections, follow clone the original repository and follow the original readme steps
+    in this readme, we removed many files from original repository, and added some scripts to make it easier to run experiments
+    but the dpdk.patch are not provided from original repository, so you need to apply it manually
