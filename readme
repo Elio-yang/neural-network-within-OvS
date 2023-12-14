@@ -1,3 +1,10 @@
+/---------------------------------------------------------------------------------------------\
+| Understanding Neural Network Based Packet Classification Algorithms to Scale Open vSwitch   |
+|                                                                                             |
+| Author: Yang Yang, Yuhao Peng, Jasmine Zhang                                                |
+|                                                                                             |                        
+\---------------------------------------------------------------------------------------------/
+
 0. run all steps on Ubuntu 20.04 with AVX-512, FMA and POPCNT enabled Intel CPU.
 
 1. make sure you run all commands using sudo or under root.
@@ -64,4 +71,4 @@
 
 17. related logs during experiments are in logs/
 
-    
+18. for original readme, check readme.old
